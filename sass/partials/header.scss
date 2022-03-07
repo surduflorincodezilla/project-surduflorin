@@ -1,0 +1,42 @@
+#mainNav {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	background-color: #fff;
+	transition: background-color 0.2s ease;
+	height: 80px;
+
+	.navbar-toggler {
+		color: #fff;
+		font-size: 18px;
+		line-height: 24.51px;
+		padding: 8px 24px 7px 24px;
+		background-color: #1ABC9C;
+		text-align: center;
+		border-radius: 5px;
+	}
+
+	&.navbar-expand-lg .navbar-toggler {
+		display: inline-block;
+	}
+	
+	.container {
+		&::after{
+			display: none;
+		}
+	}
+}
+
+@media(max-width: $tablet-max) {
+	#mainNav {
+		height: 70px;
+
+		.navbar-toggler {
+			padding: 9px 24px;
+		}
+
+		.navbar-brand {
+			img {
+				max-width: 138px;
+			}
+		}
+	}
+}
