@@ -40,3 +40,27 @@ $('.top-banner').slick({
     arrows: false,
     fade: true
 });
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+  $('#portfolio .row').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true
+  });
+} 
+
+if (window.matchMedia("(max-width: 1024px)").matches) {
+  $('#portfolio .row').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true
+  });
+} 

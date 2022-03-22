@@ -844,6 +844,41 @@ a, input, textarea, button {
 			margin: 100px auto 0;
 		}
 	}
+
+	.slick-slider {
+		.slick-prev {
+			position: absolute;
+			border: none;
+			outline: none;
+			top: 100px;
+			left: 5px;
+			text-indent: 99999999px;
+			background-image: url("/assets/img/arrow-left.png");
+			background-color: transparent;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			height: 56px;
+			width: 31px;
+		}
+
+		.slick-next {
+			position: absolute;
+			border: none;
+			outline: none;
+			top: 100px;
+			right: 5px;
+			text-indent: -99999999px;
+			background-image: url("/assets/img/arrow-right.png");
+			background-color: transparent;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			height: 56px;
+			width: 31px;
+		}
+
+	}
 }
 
 @media(max-width: $phone-max) {
