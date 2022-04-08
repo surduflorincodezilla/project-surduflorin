@@ -105,6 +105,14 @@
 		height: 70px;
 		padding: 0 15px;
 
+		&-fixed {
+			height: 50px;
+
+			.nav-menu {
+				margin-top: 50px;
+			}
+		}
+
 		.navbar-toggler {
 			padding: 9px 24px;
 		}

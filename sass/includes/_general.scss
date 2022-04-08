@@ -517,6 +517,8 @@ a, input, textarea, button {
 	#contactForm {
 		border: 1px solid #2980B9;
 		padding: 40px;
+		max-width: 640px;
+		margin: 0 auto;
 
 		span {
 			color: #27AE60;
@@ -621,18 +623,25 @@ a, input, textarea, button {
 		}
 	}
 
-	header.top-banner {
-		margin: 70px 0 0 0;
-		height: 340px;
+	#top-banner {
+		.top-banner {
+			margin: 70px 0 0 0;
+			height: 340px;
 
-		h1 {
-			font-size: 36px;
-			line-height: 49.03px;
-		}
-	
-		p {
-			font-size: 16px;
-			line-height: 21.79px;
+			.top-banner-slider { 
+				max-height: 340px;
+				margin: 0;
+			}
+
+			h1 {
+				font-size: 36px;
+				line-height: 49.03px;
+			}
+		
+			p {
+				font-size: 16px;
+				line-height: 21.79px;
+			}
 		}
 	}
 
@@ -758,6 +767,7 @@ a, input, textarea, button {
 	#contact {
 		#contactForm {
 			padding: 20px;
+			max-width: 100%;
 
 			span {
 				font-size: 26px;
