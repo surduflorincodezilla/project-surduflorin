@@ -939,8 +939,9 @@ a, input, textarea, button {
     height: 26px;
     width: 48px;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0);
-    margin: 20px 0 10px;
+    border: 1px solid #1ABC9C;
+    margin: 0;
+	float: left;
 }
 
 .light-mode-button:focus {
@@ -955,11 +956,50 @@ a, input, textarea, button {
     height: 26px;
     border-radius: 20px;
     background-color: #fff;
-	border: 2px solid #2980B9;
+	border: 2px solid #1ABC9C;
     transition: 0.3s;
 }
 
 .light-mode-button span:nth-child(2) {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    background-color: #1ABC9C;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+/* */
+.switch-mode-button {
+    background: 0;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 26px;
+    width: 48px;
+    position: relative;
+    border: 1px solid #2980B9;
+    margin: 20px 0 10px;
+}
+
+.switch-mode-button:focus {
+    outline: none;
+}
+
+.switch-mode-button span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
+	border: 2px solid #2980B9;
+    transition: 0.3s;
+}
+
+.switch-mode-button span:nth-child(2) {
     position: absolute;
     top: 4px;
     left: 4px;
@@ -972,7 +1012,6 @@ a, input, textarea, button {
 
 /* Light & Dark Mode Styles
 		--------------------------- */
-
 body {
     background-color: #f6f6f6;
     transition: background-color 0.3s;
@@ -983,14 +1022,23 @@ body[light-mode="dark"] {
     color: #ced4e2;
 }
 
+body[light-mode="dark"] .switch-mode-button span:nth-child(1){
+    background-color: #ced4e2;
+    color: #141516;
+}
+
 body[light-mode="dark"] .light-mode-button span:nth-child(1) {
     background-color: #ced4e2;
     color: #141516;
 }
 
+body[light-mode="dark"] .switch-mode-button span:nth-child(2){
+	left: 25px;
+    background-color: #2980B9;
+}
 body[light-mode="dark"] .light-mode-button span:nth-child(2) {
-    left: 65px;
-    background-color: #141516;
+    left: 25px;
+    background-color: #1ABC9C;
 }
 
 body[light-mode="dark"] a {
