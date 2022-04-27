@@ -911,3 +911,88 @@ a, input, textarea, button {
 		}
 	}
 }
+
+.bottom-buttons {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.bottom-buttons-btn {
+	color: #fff;
+    font-size: 18px;
+    line-height: 24.51px;
+    padding: 7px 24px 8px 24px;
+    background-color: #1ABC9C;
+    text-align: center;
+    border-radius: 5px;
+	border: none;
+	display: block;
+	margin: 0 auto;
+}
+
+.light-mode-button {
+    background: 0;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 26px;
+    width: 48px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin: 20px 0 10px;
+}
+
+.light-mode-button:focus {
+    outline: none; /* Not ideal for accessibility */
+}
+
+.light-mode-button span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
+	border: 2px solid #2980B9;
+    transition: 0.3s;
+}
+
+.light-mode-button span:nth-child(2) {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    background-color: #2980B9;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* Light & Dark Mode Styles
+		--------------------------- */
+
+body {
+    background-color: #f6f6f6;
+    transition: background-color 0.3s;
+}
+
+body[light-mode="dark"] {
+    background-color: #141516;
+    color: #ced4e2;
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1) {
+    background-color: #ced4e2;
+    color: #141516;
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(2) {
+    left: 65px;
+    background-color: #141516;
+}
+
+body[light-mode="dark"] a {
+    color: #141516;
+}

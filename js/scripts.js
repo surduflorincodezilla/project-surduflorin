@@ -50,63 +50,65 @@ $('.top-banner').slick({
     fade: true
 });
 
-/*if (window.matchMedia("(max-width: 767px)").matches) {
-  $('#portfolio .row').slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    fade: true
-  });
-} 
+function toggle_light_mode() {
+  var app = document.getElementsByTagName("BODY")[0];
+  if (localStorage.lightMode == "dark") {
+      localStorage.lightMode = "light";
+      app.setAttribute("light-mode", "light");
+  } else {
+      localStorage.lightMode = "dark";
+      app.setAttribute("light-mode", "dark");
+  }
+}
 
-if (window.matchMedia("(max-width: 1024px)").matches) {
-  $('#portfolio .row').slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    fade: true
-  });
-} 
+window.addEventListener(
+  "storage",
+  function () {
+      if (localStorage.lightMode == "dark") {
+          app.setAttribute("light-mode", "dark");
+      } else {
+          app.setAttribute("light-mode", "light");
+      }
+  },
+  false
+);
 
-$('#portfolio .row').slick({
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: "unslick",
-      // unslick: true
-    },
-    {
-      breakpoint: 1024,
-      settings: {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        arrows: true,
-        fade: true
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        fade: true
-      }
+$(function() {
+  var button = $("button");
+  var name = $("input[name=name]");
+
+  name.keyup(function() {
+    if (name.val().length > 0) {
+      button.addClass('active');
+    } else {
+      button.removeClass('active');
     }
-  ]
-});*/
+  });
+
+  $("form").submit(function(event) {
+    event.preventDefault();
+
+    //get the form data
+    var formData = {
+      name: $("input[name=name]").val(),
+      email: $("input[name=email]").val(),
+      caps: $("input[name=text]").val()
+    };
+
+    // process the form
+    $.ajax({
+      type: "POST",
+      url: "//jsonplaceholder.typicode.com/posts",
+      data: formData,
+      dataType: "json",
+      encode: true
+    }).done(function(data) {
+      $(".response")
+        .empty()
+        .append(JSON.stringify(data, null, 2));
+    });
+  });
+});
 
 
 var carousel = $('#portfolio .row');
